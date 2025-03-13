@@ -3,6 +3,8 @@
 CatsApp est une application de messagerie sécurisée permettant aux utilisateurs de communiquer de manière chiffrée.
 Elle utilise Flask pour le backend et MySQL comme base de données. Les utilisateurs peuvent créer un compte avec un nom d'utilisateur unique, ajouter des contacts grâce aux noms d'utilisateurs et échanger par message. Le statut en ligne est affiché lorsque l'utilisateur est connecté. Si aucun mouvement de curseur ou clic pendant 5 minutes, alors le statut passe inactif. Si l'utilisateur se déconnecte, le statut change.
 
+
+
 ## Table des matières
 
 - [Installation](#installation)
