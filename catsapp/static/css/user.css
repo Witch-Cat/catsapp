@@ -1,0 +1,749 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Onest", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body, html {
+  overflow: hidden; /* Empêche le débordement global */
+  height: 100%;
+}
+
+/* Styles de la navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.navbar1 {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-sidebar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.navbar3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #202020;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.btn-settings:hover #settingsIcon {
+  transform: rotate(30deg);
+  transition: transform 0.4s;
+}
+
+
+.material-symbols-outlined {
+  transition: transform 0.4s;
+}
+
+.plus-icon:hover {
+  border-radius: 25px;
+  transform: rotate(90deg);
+  transition: transform 0.4s;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.input-field {
+  width: 180px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 2.5px solid rgb(48, 48, 48);
+  margin-right: 10px;
+  transition: all 0.4s ease;
+  font-weight: bold;
+}
+
+.input-field::placeholder {
+  color: #202020;
+  font-weight: bold;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0px 5px 5px 5px;
+
+}
+
+.input-field-search-bar {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 25px;
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  transition: all 0.4s ease;
+  
+}
+
+.input-field-search-bar::placeholder {
+  color: #ffffff;
+
+}
+
+.input-field-search-bar:focus {
+  outline: none;
+}
+
+.input-field-chat {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  transition: all 0.4s ease;
+  background-color: #202020;
+  color: #fff;
+  outline: none;
+  font-weight: bold;
+}
+
+.input-field-chat::placeholder {
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-attachment {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #202020;
+  margin-right: 8px;
+  transition: all 0.4s;
+}
+
+.btn-attachment:hover {
+  background-color: #202020;
+}
+
+.btn-attachment .material-symbols-outlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-60deg);
+  font-size: 30px;
+  transition: all 0.4s;
+}
+
+.btn-attachment .material-symbols-outlined:hover {
+  color: #fff;
+}
+
+
+
+.main-container {
+  height: 100vh; /* Utilisez 100vh pour occuper toute la hauteur de la fenêtre */
+  overflow: hidden;
+  display: flex;
+  height: 91vh;
+}
+
+.sidebar, .chat-container {
+  height: 100%; /* Assurez-vous que les éléments enfants occupent toute la hauteur */
+}
+
+.sidebar {
+  width: 30%;
+  border-right: 2px solid rgb(48, 48, 48);
+  padding: 20px;
+  overflow-y: auto;
+  transition: width 0.3s;
+  background-color: #fff;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 5px 10px;
+  position: relative;
+}
+
+.contact-header h4 {
+  margin-right: 13px;
+  font-size: 32px;
+  color: rgb(48, 48, 48);
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid rgb(48, 48, 48);
+  border-radius: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.list-item:hover {
+  transform: translateX(5px);
+}
+
+.list-item.active {
+  background-color: #202020;
+  border: none;
+}
+
+.list-item.active .contact-info h6 {
+  color: #fff;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.active-indicator {
+  position: absolute;
+  top: 34px;
+  left: 34px;
+  width: 16px;
+  height: 16px;
+  background-color: #202020;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.active-indicator.active-border {
+  border: 2px solid #202020;
+  background-color: #fff;
+}
+
+.contact-avatar {
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info h6 {
+  margin-bottom: 4px;
+  font-size: 18px;
+  color: #202020;
+}
+
+.contact-info small {
+  font-size: 14px;
+  color: #b4b4b4;
+}
+
+
+.pending-contacts-card {
+  background-color: #202020;
+  color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0px 5px 0 5px
+}
+
+.pending-contacts-card h3 {
+  font-size: 1.4rem;
+  cursor: default;
+}
+
+.contacts-list {
+  overflow-y: auto;
+  max-height: calc(100vh - 300px); /* Ajustez cette valeur selon vos besoins */
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+}
+
+.contacts-list::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
+.sidebar.collapsed {
+  width: 0;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.chat-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: width 0.3s;
+}
+
+.chat-container.expanded {
+  width: 100%;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.chat-user-card {
+  display: flex;
+  align-items: center;
+  background-color: #202020;
+  color: #fff;
+  padding: 15px 25px 15px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 5px;
+}
+
+.chat-user-card img {
+  border-radius: 16px;
+  margin-right: 15px;
+}
+
+.chat-user-card h5 {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #fff;
+  cursor: default;
+}
+
+.chat-box {
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+  border-width: 10px;
+}
+
+.chat-box::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
+/* Styles pour centrer le formulaire et l'icône */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 55px;
+  width: 350px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #202020;
+  transition: all 0.4s;
+}
+
+.btn-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #202020;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-send-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background-color: #202020;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-send-chat:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+
+.btn-send:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+.btn-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background-color: #202020;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-add:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+.message-sent {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.message-received {
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.message-content {
+  padding: 12px;
+  border-radius: 15px;
+  position: relative;
+  word-wrap: break-word; /* Ajoutez cette ligne */
+}
+
+.message-sent .message-content {
+  background-color: #202020;
+  color: #fff;
+}
+
+.message-received .message-content {
+  background-color: #fff;
+  border: 2px solid #ddd;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+  margin-right: 6px;
+  text-align: end;
+}
+
+.message-time-received {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+  margin-left: 6px;
+  text-align: start;
+}
+
+/* Styles communs pour les boutons avec icônes */
+.btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #202020;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-icon:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+/* Styles pour centrer le message "Sélectionnez un contact pour commencer à chatter" */
+.no-contact-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.no-contact-message h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.no-contact-message p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1560px) {
+  .contact-header {
+    flex-direction: row; /* Garde le bouton à côté du titre */
+    align-items: center;
+  }
+
+  .contact-form {
+      margin-top: 10px;
+      width: 100%;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  .sidebar {
+    display: none;
+    width: 0;
+  }
+
+  .sidebar.show {
+    display: block;
+    width: 100%;
+  }
+
+  .contact-header {
+    justify-content: center;
+  }
+
+  .contacts-list {
+    padding-left: 15vh;
+    padding-right: 15vh;
+  }
+
+  .pending-contacts {
+    margin-left: 15vh;
+    margin-right: 15vh;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-container {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .contacts-list {
+    padding-left: 7vh;
+    padding-right: 7vh;
+  }
+
+  .pending-contacts{
+    margin-left: 7vh;
+    margin-right: 7vh;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .contacts-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pending-contacts {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+.sidebar .contacts-list,
+.sidebar .pending-contacts {
+  transition: opacity 0.35s ease-in-out, visibility 0.3s ease-out, height 0.3s ease-in;
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+}
+
+.sidebar .search-bar,
+.sidebar .contact-header {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+}
+
+.sidebar.collapsed .search-bar,
+.sidebar.collapsed .contact-header,
+.sidebar.collapsed .contacts-list,
+.sidebar.collapsed .pending-contacts {
+  opacity: 0;
+  visibility: hidden;
+  height: 0; 
+  overflow: hidden;
+}
+
+
+
+.popup {
+  display: none; /* Masque la popup par défaut */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 340px;
+  min-height: 140px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.popup-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #202020;
+}
+
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background-color: #fff;
+  border: solid 2px #202020;
+  border-radius: 25px;
+  transition: all 0.2s;
+}
+
+.popup-close:hover {
+  background-color: #202020;
+}
+
+span.material-symbols-outlined.popup-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #202020;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+span.material-symbols-outlined.popup-close-btn:hover {
+  color: #fff;
+}
+
+
+.pending-contacts li {
+  padding-top: 10px;
+}
+
+/* Style pour le nom de la personne */
+.contact-name {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.accept-btn {
+  background-color: #00000000;
+  color: #fff;
+}
+
+.accept-btn:hover {
+  background-color: #fff;
+  color: #202020;
+}
+
+/* Style pour les boutons d'action */
+.action-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 7px 10px;
+  margin-right: 7px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.block-btn {
+  border: none;
+  background-color: #ffffff;
+  color: #202020;
+  padding: 9px 14px;
+}
